@@ -34,41 +34,6 @@
   margin-bottom: 20px;
 }
 
-.heroSocials {
-  display: flex;
-  gap: 16px;
-  margin-bottom: 40px;
-  justify-content: flex-start;
-}
-
-.socialBtn {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 24px;
-  border-radius: 30px;
-  color: white;
-  font-weight: 700;
-  font-size: 1rem;
-  border: none;
-  cursor: pointer;
-  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.socialBtn:hover {
-  transform: translateY(-4px);
-}
-
-.instagram {
-  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-  box-shadow: 0 8px 16px rgba(220, 39, 67, 0.3);
-}
-
-.whatsapp {
-  background: #25D366;
-  box-shadow: 0 8px 16px rgba(37, 211, 102, 0.3);
-}
-
 .badges {
   display: flex;
   flex-wrap: wrap;
@@ -164,18 +129,6 @@
     width: 100%;
     padding: 16px !important; /* Bigger, highly tappable buttons */
     font-size: 1.15rem !important;
-  }
-  
-  .heroSocials {
-    justify-content: center;
-    width: 100%;
-    margin-bottom: 24px;
-  }
-
-  .socialBtn {
-    flex: 1; /* Make social buttons equal width on mobile */
-    justify-content: center;
-    padding: 14px 16px !important;
   }
   
   .badges {

@@ -34,7 +34,7 @@ export default function Navbar() {
           
           <div className={styles.actions}>
             <button onClick={scrollToMenu} className={`neu-button ${styles.orderBtn}`}>
-              Order
+              Order Now
             </button>
             <button onClick={toggleCart} className={styles.cartBtn}>
               <ShoppingCart size={24} />

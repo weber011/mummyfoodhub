@@ -215,7 +215,7 @@ html {
 
   /* Padding adjustments */
   section {
-    padding: 40px 16px !important;
+    padding: 40px 16px;
   }
 }
 

@@ -1,6 +1,8 @@
 'use client';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { MessageCircle, Instagram } from 'lucide-react';
+import { generateSimpleWhatsAppLink } from '@/utils/whatsapp';
 import styles from './Hero.module.css';
 
 export default function Hero() {
@@ -29,6 +31,23 @@ export default function Hero() {
         >
           <button className="neu-button">Order Today&apos;s Meal</button>
           <button className="neu-button neu-button-secondary">View Subscription Plans</button>
+
+          <div className={styles.heroSocials}>
+            <button 
+              className={`clay-card ${styles.socialBtn} ${styles.instagram}`}
+              onClick={() => window.open('https://www.instagram.com/mummyfoodhub?igsh=N2oxNm5taGY5bHox', '_blank')}
+            >
+              <Instagram size={24} />
+              <span>Instagram</span>
+            </button>
+            <button 
+              className={`clay-card ${styles.socialBtn} ${styles.whatsapp}`}
+              onClick={() => window.open(generateSimpleWhatsAppLink('Hi Mummy Food Hub! I have a question about your menu.'), '_blank')}
+            >
+              <MessageCircle size={24} />
+              <span>WhatsApp</span>
+            </button>
+          </div>
         </motion.div>
         
         <motion.div 

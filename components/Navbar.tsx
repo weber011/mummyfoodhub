@@ -25,7 +25,7 @@ export default function Navbar() {
         <div className={styles.container}>
           <Link href="/" className={styles.logo}>
             <Image 
-              src="/images/logo.jpg" 
+              src="/images/logo.png" 
               alt="Mummy Food Hub Logo" 
               width={50} 
               height={50} 

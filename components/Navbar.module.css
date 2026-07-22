@@ -90,7 +90,7 @@
 
 @media (max-width: 768px) {
   .header {
-    display: none; /* Hide Desktop Nav */
+    display: none !important; /* Force hide Desktop Nav */
   }
 
   .mobileBottomNav {

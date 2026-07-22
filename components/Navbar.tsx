@@ -1,9 +1,10 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
-import { ShoppingCart, Menu, X } from 'lucide-react';
+import { ShoppingCart, Menu, X, MessageCircle, Instagram } from 'lucide-react';
 import { useCart } from '@/store/CartContext';
 import { motion, AnimatePresence } from 'framer-motion';
+import { generateSimpleWhatsAppLink } from '@/utils/whatsapp';
 import styles from './Navbar.module.css';
 
 export default function Navbar() {
@@ -65,6 +66,24 @@ export default function Navbar() {
               <Link href="#subscription" onClick={() => setIsMenuOpen(false)}>Subscriptions</Link>
               <Link href="#gallery" onClick={() => setIsMenuOpen(false)}>Gallery</Link>
               <Link href="#faq" onClick={() => setIsMenuOpen(false)}>FAQ</Link>
+            </div>
+            
+            <div className={styles.mobileSocials}>
+              <p>Contact Us</p>
+              <div className={styles.socialButtons}>
+                <button 
+                  onClick={() => window.open('https://www.instagram.com/mummyfoodhub?igsh=N2oxNm5taGY5bHox', '_blank')}
+                  className={`${styles.socialBtn} ${styles.instaBtn}`}
+                >
+                  <Instagram size={28} />
+                </button>
+                <button 
+                  onClick={() => window.open(generateSimpleWhatsAppLink('Hi Mummy Food Hub!'), '_blank')}
+                  className={`${styles.socialBtn} ${styles.waBtn}`}
+                >
+                  <MessageCircle size={28} />
+                </button>
+              </div>
             </div>
           </motion.div>
         )}

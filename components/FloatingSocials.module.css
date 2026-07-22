@@ -1,0 +1,49 @@
+.container {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  z-index: 9999;
+}
+
+.socialBtn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.socialBtn:hover {
+  transform: scale(1.1) translateY(-5px);
+}
+
+.instagram {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  box-shadow: 0 10px 20px rgba(220, 39, 67, 0.4);
+}
+
+.whatsapp {
+  background: #25D366;
+  box-shadow: 0 10px 20px rgba(37, 211, 102, 0.4);
+}
+
+@media (max-width: 768px) {
+  .container {
+    bottom: 100px; /* Lift above the floating mobile navigation */
+    right: 16px;
+    gap: 12px;
+  }
+
+  .socialBtn {
+    width: 50px;
+    height: 50px;
+  }
+}

@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MenuItem } from '@/app/generated/prisma/client';
 import FoodCard from './FoodCard';
+import styles from './MenuGrid.module.css';
 
 export default function MenuGrid({ items }: { items: MenuItem[] }) {
   const [filter, setFilter] = useState('All');
@@ -17,13 +18,12 @@ export default function MenuGrid({ items }: { items: MenuItem[] }) {
 
   return (
     <div>
-      <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', marginBottom: '60px', flexWrap: 'wrap' }}>
+      <div className={styles.categoryContainer}>
         {categories.map(cat => (
           <button
             key={cat}
             onClick={() => setFilter(cat)}
-            className={`neu-button ${filter === cat ? '' : 'neu-button-secondary'}`}
-            style={{ padding: '12px 28px', fontSize: '1rem', borderRadius: '30px' }}
+            className={`neu-button ${filter === cat ? '' : 'neu-button-secondary'} ${styles.categoryBtn}`}
           >
             {cat}
           </button>
@@ -32,11 +32,7 @@ export default function MenuGrid({ items }: { items: MenuItem[] }) {
       
       <motion.div 
         layout
-        style={{ 
-          display: 'grid', 
-          gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', 
-          gap: '40px' 
-        }}
+        className={styles.grid}
       >
         <AnimatePresence>
           {filteredItems.map(item => (

@@ -170,3 +170,17 @@
   opacity: 0.5;
   cursor: not-allowed;
 }
+
+@media (max-width: 768px) {
+  .drawer {
+    top: auto; /* Remove top constraint */
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    max-width: 100%;
+    height: 85vh; /* Standard bottom sheet height */
+    border-radius: var(--radius-main) var(--radius-main) 0 0;
+    padding: 20px 16px;
+  }
+}

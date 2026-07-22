@@ -101,21 +101,56 @@
 
 @media (max-width: 900px) {
   .hero {
-    flex-direction: column;
+    flex-direction: column-reverse; /* Put image above text on mobile */
     text-align: center;
     padding-top: 20px;
+    min-height: auto; /* Remove tall minimum height */
+    gap: 24px;
   }
   
   .content h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
+  }
+  
+  .content p {
+    font-size: 1rem;
+    margin-bottom: 24px;
   }
   
   .actions {
     flex-direction: column;
     align-items: center;
+    width: 100%;
+  }
+
+  .actions button {
+    width: 100%;
   }
   
   .badges {
     justify-content: center;
+  }
+
+  .imageWrapper {
+    min-height: 250px;
+    margin-bottom: 20px;
+  }
+
+  .tiffinMock {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 430px) {
+  /* Specific tweaks for smaller iPhones/Androids */
+  .tiffinMock {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .hero {
+    padding-top: 10px;
+    gap: 16px;
   }
 }

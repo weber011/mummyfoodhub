@@ -4,10 +4,18 @@ import { X, Plus, Minus, ShoppingBag } from 'lucide-react';
 import { useCart } from '@/store/CartContext';
 import { generateWhatsAppLink } from '@/utils/whatsapp';
 import styles from './CartDrawer.module.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function CartDrawer() {
   const { items, isCartOpen, setIsCartOpen, updateQuantity, removeItem, subtotal } = useCart();
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
   
   // Hardcoded distance based delivery for demo
   const deliveryCharge = items.length > 0 ? 15 : 0; 
@@ -38,9 +46,9 @@ export default function CartDrawer() {
             onClick={() => setIsCartOpen(false)}
           />
           <motion.div
-            initial={{ x: '100%' }}
-            animate={{ x: 0 }}
-            exit={{ x: '100%' }}
+            initial={isMobile ? { y: '100%' } : { x: '100%' }}
+            animate={isMobile ? { y: 0 } : { x: 0 }}
+            exit={isMobile ? { y: '100%' } : { x: '100%' }}
             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
             className={`${styles.drawer} glass-panel`}
           >

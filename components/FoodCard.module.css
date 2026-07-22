@@ -144,3 +144,21 @@
   font-weight: 700;
   cursor: not-allowed;
 }
+
+@media (max-width: 768px) {
+  .imageWrapper {
+    height: 200px;
+  }
+  
+  .content {
+    padding: 20px;
+  }
+  
+  .title {
+    font-size: 1.35rem;
+  }
+  
+  .addBtn {
+    padding: 10px 20px;
+  }
+}

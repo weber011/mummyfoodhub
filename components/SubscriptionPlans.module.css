@@ -202,3 +202,57 @@
   color: var(--color-brown);
   font-size: 1.1rem;
 }
+
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 16px;
+  }
+
+  .header h2 {
+    font-size: 2.2rem;
+  }
+
+  .cardsGrid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    align-items: stretch; /* Cards should all have same height footprint on mobile */
+  }
+
+  .popularCard {
+    transform: none; /* Remove desktop lift */
+    padding-top: 40px;
+    border-width: 2px;
+  }
+
+  .popularBadge {
+    font-size: 0.9rem;
+    padding: 6px 16px;
+  }
+
+  .card {
+    padding: 30px 20px;
+  }
+
+  .price {
+    font-size: 2.8rem;
+  }
+
+  .detailsGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .detailBox {
+    padding: 24px;
+  }
+
+  .noteBox {
+    flex-direction: column;
+    padding: 20px;
+    gap: 12px;
+  }
+
+  .trustGrid {
+    grid-template-columns: 1fr 1fr; /* 2 columns on mobile */
+  }
+}

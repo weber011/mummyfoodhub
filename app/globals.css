@@ -182,3 +182,54 @@ h1, h2, h3, h4, h5, h6 {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-orange);
 }
+
+/* ========================================================= */
+/* MOBILE-FIRST RESPONSIVE UPDATES                           */
+/* ========================================================= */
+
+/* Fluid Typography */
+html {
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 14px; /* Scaled down base for mobile */
+  }
+  
+  h1 { font-size: 2.2rem; line-height: 1.1; }
+  h2 { font-size: 1.8rem; line-height: 1.2; }
+  h3 { font-size: 1.5rem; line-height: 1.3; }
+  p { font-size: 1rem; line-height: 1.5; }
+  
+  /* Touch Target Minimums */
+  button, a {
+    min-height: 48px;
+  }
+  
+  .neu-button {
+    padding: 12px 24px;
+    font-size: 1rem;
+    width: 100%; /* Default buttons to full width on mobile unless specified */
+  }
+
+  /* Padding adjustments */
+  section {
+    padding: 40px 16px !important;
+  }
+}
+
+/* Bottom Sheet Animation utility */
+.bottom-sheet {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--color-white);
+  border-top-left-radius: var(--radius-main);
+  border-top-right-radius: var(--radius-main);
+  box-shadow: 0 -10px 40px rgba(0,0,0,0.1);
+  z-index: 1000;
+  overflow-y: auto;
+  max-height: 85vh;
+}

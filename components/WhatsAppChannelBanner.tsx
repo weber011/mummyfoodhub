@@ -3,7 +3,7 @@ import { MessageCircle, BellRing } from 'lucide-react';
 import styles from './WhatsAppChannelBanner.module.css';
 
 export default function WhatsAppChannelBanner() {
-  const channelLink = "https://whatsapp.com/channel/YOUR_CHANNEL_LINK_HERE"; // Placeholder
+  const channelLink = "https://whatsapp.com/channel/0029VbCpe073QxRyLXpOKC02";
 
   return (
     <section className={styles.section}>

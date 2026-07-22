@@ -27,8 +27,12 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <button className="neu-button">Order Today&apos;s Meal</button>
-          <button className="neu-button neu-button-secondary">View Subscription Plans</button>
+          <button className="neu-button" onClick={() => document.getElementById('today-menu')?.scrollIntoView({ behavior: 'smooth' })}>
+            Order Today&apos;s Meal
+          </button>
+          <button className="neu-button neu-button-secondary" onClick={() => document.getElementById('subscription')?.scrollIntoView({ behavior: 'smooth' })}>
+            View Subscription Plans
+          </button>
         </motion.div>
         
         <motion.div 

@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
-import { MenuItem } from '@prisma/client';
+import { MenuItem } from '@/app/generated/prisma/client';
 
 export default function AdminPage() {
   const [items, setItems] = useState<MenuItem[]>([]);

@@ -1,10 +1,10 @@
 'use client';
 import { MessageCircle, Instagram } from 'lucide-react';
-import { generateWhatsAppLink } from '@/utils/whatsapp';
+import { generateSimpleWhatsAppLink } from '@/utils/whatsapp';
 
 export default function FloatingSocials() {
   const handleWhatsApp = () => {
-    const url = generateWhatsAppLink('Hi Mummy Food Hub! I have a question about your menu.');
+    const url = generateSimpleWhatsAppLink('Hi Mummy Food Hub! I have a question about your menu.');
     window.open(url, '_blank');
   };
 

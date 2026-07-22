@@ -1,12 +1,12 @@
 'use client';
 import { motion } from 'framer-motion';
-import { generateWhatsAppLink } from '@/utils/whatsapp';
+import { generateSimpleWhatsAppLink } from '@/utils/whatsapp';
 import { Check, Info, Leaf, ShieldCheck, Heart, Truck } from 'lucide-react';
 import styles from './SubscriptionPlans.module.css';
 
 export default function SubscriptionPlans() {
   const handleSubscribe = (planName: string) => {
-    const url = generateWhatsAppLink(`Hi Mummy Food Hub! I am interested in subscribing to the *${planName}*. Please share the details.`);
+    const url = generateSimpleWhatsAppLink(`Hi Mummy Food Hub! I am interested in subscribing to the *${planName}*. Please share the details.`);
     window.open(url, '_blank');
   };
 

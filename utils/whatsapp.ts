@@ -1,5 +1,10 @@
 import { CartItem } from '@/store/CartContext';
 
+export const generateSimpleWhatsAppLink = (message: string) => {
+  const WHATSAPP_NUMBER = '917065665988';
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+};
+
 export const generateWhatsAppLink = (
   items: CartItem[], 
   deliveryCharge: number, 

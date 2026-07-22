@@ -15,7 +15,7 @@ export default function Navbar() {
           Mummy Food Hub
         </Link>
         <nav className={styles.nav}>
-          <Link href="#today-menu">Today's Menu</Link>
+          <Link href="#today-menu">Today&apos;s Menu</Link>
           <Link href="#subscription">Subscription Plans</Link>
           <Link href="#gallery">Gallery</Link>
           <Link href="#faq">FAQ</Link>

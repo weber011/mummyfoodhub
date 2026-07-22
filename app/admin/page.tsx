@@ -31,7 +31,7 @@ export default function AdminPage() {
               <th style={{ padding: '12px' }}>Name</th>
               <th style={{ padding: '12px' }}>Category</th>
               <th style={{ padding: '12px' }}>Price</th>
-              <th style={{ padding: '12px' }}>Today's Spec</th>
+              <th style={{ padding: '12px' }}>Today&apos;s Spec</th>
               <th style={{ padding: '12px' }}>Sold Out</th>
               <th style={{ padding: '12px' }}>Actions</th>
             </tr>

@@ -22,7 +22,7 @@ export default function WeeklyMenuSection() {
       <div style={{ textAlign: 'center', marginBottom: '60px' }}>
         <h2 style={{ fontSize: '3rem', color: 'var(--color-brown)', marginBottom: '12px' }}>Day-Wise Menu</h2>
         <p style={{ fontSize: '1.2rem', color: 'var(--color-brown)', opacity: 0.8 }}>
-          See what's cooking every day in our kitchen.
+          See what&apos;s cooking every day in our kitchen.
         </p>
       </div>
 
@@ -51,7 +51,7 @@ export default function WeeklyMenuSection() {
             style={{ padding: '40px', maxWidth: '600px', width: '100%', textAlign: 'center', background: 'var(--color-cream)' }}
           >
             <h3 style={{ fontSize: '2rem', color: 'var(--color-tomato)', marginBottom: '30px' }}>
-              {activeDay}'s Special
+              {activeDay}&apos;s Special
             </h3>
             
             <div style={{ marginBottom: '24px' }}>

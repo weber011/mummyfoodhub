@@ -2,6 +2,7 @@
 import { MenuItem } from '@/app/generated/prisma/client';
 import { useCart } from '@/store/CartContext';
 import styles from './FoodCard.module.css';
+import Image from 'next/image';
 
 export default function FoodCard({ item }: { item: MenuItem }) {
   const { addItem } = useCart();
@@ -19,12 +20,12 @@ export default function FoodCard({ item }: { item: MenuItem }) {
     <div className={`${styles.card} clay-card`}>
       <div className={styles.imageWrapper}>
         <div className={styles.badges}>
-          {item.isTodaySpec && <span className={styles.badgeSpecial}>Today's Special</span>}
+          {item.isTodaySpec && <span className={styles.badgeSpecial}>Today&apos;s Special</span>}
           {item.isBestSeller && <span className={styles.badgeBest}>Best Seller</span>}
         </div>
         
         {item.imageUrl ? (
-          <img src={item.imageUrl} alt={item.name} className={styles.foodImg} />
+          <Image src={item.imageUrl} alt={item.name} width={140} height={140} className={styles.foodImg} />
         ) : (
           <div className={styles.placeholderImg}>
             {item.isVeg ? '🥗' : '🍗'}

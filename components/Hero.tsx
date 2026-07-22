@@ -1,5 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import styles from './Hero.module.css';
 
 export default function Hero() {
@@ -26,7 +27,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <button className="neu-button">Order Today's Meal</button>
+          <button className="neu-button">Order Today&apos;s Meal</button>
           <button className="neu-button neu-button-secondary">View Subscription Plans</button>
         </motion.div>
         
@@ -51,7 +52,7 @@ export default function Hero() {
           transition={{ duration: 1, type: "spring" }}
         >
           <div className={styles.tiffinMock}>
-            <img src="/images/real_hero_tiffin_1784699964771.png" alt="Premium Realistic Tiffin" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+            <Image src="/images/real_hero_tiffin_1784699964771.png" alt="Premium Realistic Tiffin" width={500} height={500} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
           </div>
         </motion.div>
       </div>

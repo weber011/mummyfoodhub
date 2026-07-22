@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ShoppingCart, Menu, X, MessageCircle, Instagram } from 'lucide-react';
 import { useCart } from '@/store/CartContext';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -23,7 +24,14 @@ export default function Navbar() {
       <header className={`${styles.header} glass-panel`}>
         <div className={styles.container}>
           <Link href="/" className={styles.logo}>
-            Mummy Food Hub
+            <Image 
+              src="/images/logo.jpg" 
+              alt="Mummy Food Hub Logo" 
+              width={50} 
+              height={50} 
+              className={styles.logoImage}
+            />
+            <span className={styles.logoText}>Mummy Food Hub</span>
           </Link>
           
           <nav className={styles.nav}>

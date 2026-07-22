@@ -15,10 +15,21 @@
 }
 
 .logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.logoImage {
+  border-radius: 50%;
+  object-fit: contain;
+}
+
+.logoText {
   font-size: 1.5rem;
   font-weight: 800;
   color: var(--color-tomato);
-  text-decoration: none;
 }
 
 .nav {
@@ -113,8 +124,13 @@
     top: 36px;
   }
 
-  .logo {
+  .logoText {
     font-size: 1.25rem;
+  }
+  
+  .logoImage {
+    width: 40px;
+    height: 40px;
   }
 
   .nav {

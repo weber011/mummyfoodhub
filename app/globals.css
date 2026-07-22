@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --color-cream: #FFF8EE;
+  --color-white: #FFFFFF;
+  --color-orange: #FF9E45;
+  --color-tomato: #FF6B57;
+  --color-green: #62B15A;
+  --color-brown: #3B302A;
+
+  --radius-main: 36px;
+  
+  /* Soft Neumorphism & Claymorphism Shadows */
+  --shadow-clay-light: 
+    8px 8px 16px rgba(210, 200, 185, 0.4),
+    -8px -8px 16px rgba(255, 255, 255, 1),
+    inset -4px -4px 10px rgba(210, 200, 185, 0.1),
+    inset 4px 4px 10px rgba(255, 255, 255, 0.8);
+  
+  --shadow-clay-hover:
+    12px 12px 24px rgba(210, 200, 185, 0.45),
+    -12px -12px 24px rgba(255, 255, 255, 1),
+    inset -4px -4px 10px rgba(210, 200, 185, 0.05),
+    inset 4px 4px 10px rgba(255, 255, 255, 0.9);
+
+  /* Inner shadow for neumorphic inset */
+  --shadow-neu-inset: 
+    inset 4px 4px 8px rgba(210, 200, 185, 0.5),
+    inset -4px -4px 8px rgba(255, 255, 255, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--color-cream);
+  color: var(--color-brown);
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+  /* Premium smooth scroll */
+  scroll-behavior: smooth;
+}
+
+/* Organic Blob Backgrounds */
+.bg-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  z-index: -1;
+  opacity: 0.6;
+}
+.bg-blob-1 {
+  width: 500px;
+  height: 500px;
+  background: var(--color-orange);
+  top: -100px;
+  left: -150px;
+  opacity: 0.15;
+}
+.bg-blob-2 {
+  width: 600px;
+  height: 600px;
+  background: var(--color-tomato);
+  top: 40%;
+  right: -200px;
+  opacity: 0.1;
+}
+
+/* Utility Classes */
+.clay-card {
+  background: var(--color-white);
+  border-radius: var(--radius-main);
+  box-shadow: var(--shadow-clay-light);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.clay-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-clay-hover);
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: var(--radius-main);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.neu-button {
+  background: var(--color-tomato);
+  color: var(--color-white);
+  border: none;
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 1.05rem;
+  font-family: 'Outfit', sans-serif;
+  cursor: pointer;
+  box-shadow: 4px 4px 10px rgba(255, 107, 107, 0.4), 
+              -4px -4px 10px rgba(255, 255, 255, 0.8);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.neu-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 6px 6px 15px rgba(255, 107, 107, 0.5), 
+              -6px -6px 15px rgba(255, 255, 255, 0.9);
+}
+
+.neu-button:active {
+  transform: translateY(1px);
+  box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.2), 
+              inset -4px -4px 8px rgba(255, 255, 255, 0.2);
+}
+
+.neu-button-secondary {
+  background: var(--color-white);
+  color: var(--color-brown);
+  box-shadow: var(--shadow-clay-light);
+}
+.neu-button-secondary:hover {
+  box-shadow: var(--shadow-clay-hover);
+}
+.neu-button-secondary:active {
+  box-shadow: var(--shadow-neu-inset);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+/* Animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 6s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+@keyframes steam {
+  0% { opacity: 0; transform: translateY(0) scale(1); }
+  50% { opacity: 0.6; transform: translateY(-20px) scale(1.2); }
+  100% { opacity: 0; transform: translateY(-40px) scale(1.5); }
+}
+
+.steam-particle {
+  position: absolute;
+  background: #fff;
+  border-radius: 50%;
+  filter: blur(8px);
+  animation: steam 3s infinite ease-out;
+}
+
+/* Hide scrollbar for cleaner look */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 158, 69, 0.5);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-orange);
+}

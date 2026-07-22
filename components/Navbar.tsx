@@ -18,52 +18,43 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Desktop Header */}
+      {/* Responsive Top Header */}
       <header className={`${styles.header} glass-panel`}>
         <div className={styles.container}>
           <Link href="/" className={styles.logo}>
             Mummy Food Hub
           </Link>
+          
           <nav className={styles.nav}>
             <Link href="#today-menu">Today&apos;s Menu</Link>
             <Link href="#subscription">Subscription Plans</Link>
             <Link href="#gallery">Gallery</Link>
             <Link href="#faq">FAQ</Link>
           </nav>
+          
           <div className={styles.actions}>
+            <button onClick={scrollToMenu} className={`neu-button ${styles.orderBtn}`}>
+              Order
+            </button>
             <button onClick={toggleCart} className={styles.cartBtn}>
               <ShoppingCart size={24} />
               {itemCount > 0 && <span className={styles.badge}>{itemCount}</span>}
             </button>
-            <button onClick={scrollToMenu} className="neu-button" style={{ padding: '10px 24px', fontSize: '1rem' }}>
-              Order Now
+            <button className={styles.mobileMenuBtn} onClick={() => setIsMenuOpen(true)}>
+              <Menu size={28} />
             </button>
           </div>
         </div>
       </header>
-
-      {/* Mobile Floating Bottom Nav */}
-      <div className={styles.mobileBottomNav}>
-        <button className={styles.mobileMenuBtn} onClick={() => setIsMenuOpen(true)}>
-          <Menu size={28} />
-        </button>
-        <button onClick={scrollToMenu} className={`neu-button ${styles.mobileOrderBtn}`}>
-          Order Now
-        </button>
-        <button onClick={toggleCart} className={styles.cartBtn}>
-          <ShoppingCart size={28} />
-          {itemCount > 0 && <span className={styles.badge}>{itemCount}</span>}
-        </button>
-      </div>
 
       {/* Mobile Full Screen Menu Overlay */}
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div 
             className={styles.mobileMenuOverlay}
-            initial={{ opacity: 0, y: '100%' }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: '100%' }}
+            initial={{ opacity: 0, x: '100%' }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: '100%' }}
             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
           >
             <button className={styles.closeMenuBtn} onClick={() => setIsMenuOpen(false)}>
